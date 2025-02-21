@@ -54,8 +54,16 @@ body {
 }
 
 .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
     font-size: 1.5rem;
     font-weight: 700;
+}
+
+.logo-image {
+    width: 30px; /* Tamanho pequeno para a imagem */
+    height: auto;
 }
 
 .logo .highlight {
@@ -162,19 +170,6 @@ body {
 .btn:hover {
     transform: translateY(-3px);
     box-shadow: var(--shadow);
-}
-
-.hero-image img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 15px;
-    box-shadow: var(--shadow);
-}
-
-/* Tamanho menor para a imagem */
-.small-image {
-    width: 300px; /* Ajuste o tamanho conforme necessário */
-    height: auto;
 }
 
 /* Features Section */
