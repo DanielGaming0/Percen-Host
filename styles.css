@@ -62,9 +62,9 @@ body {
 }
 
 .logo-image {
-    width: 30px; /* Tamanho pequeno para a imagem */
+    width: 30px;
     height: auto;
-    margin-right: 0.5rem; /* Espaço entre a logo e o texto */
+    margin-right: 0.5rem;
 }
 
 .logo .highlight {
@@ -116,7 +116,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 120px 10% 0;
+    padding: 120px 10% 50px; /* Ajuste no padding-bottom */
     background: var(--background);
 }
 
@@ -145,6 +145,7 @@ body {
 .cta-buttons {
     display: flex;
     gap: 1rem;
+    margin-bottom: 2rem; /* Adicionado para espaçamento */
 }
 
 .btn {
@@ -175,7 +176,7 @@ body {
 
 /* Features Section */
 .features {
-    padding: 100px 10%;
+    padding: 50px 10%; /* Reduzido o padding-top */
     background: var(--background);
 }
 
@@ -347,5 +348,20 @@ footer {
 
     .menu-btn {
         display: block;
+    }
+}
+
+/* Ajustes para telas maiores */
+@media (min-width: 769px) {
+    .hero {
+        padding-bottom: 50px; /* Reduz o espaçamento no PC */
+    }
+
+    .features {
+        padding-top: 50px; /* Reduz o espaçamento no PC */
+    }
+
+    [data-aos] {
+        transition-delay: 0s !important; /* Remove o delay do AOS em telas maiores */
     }
 }
