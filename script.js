@@ -104,3 +104,35 @@ document.addEventListener('DOMContentLoaded', function () {
         body.classList.add('dark-mode');
     }
 });
+
+// Modal de seleção de cor
+document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('colorModal');
+    const closeModal = document.getElementById('closeModal');
+    const colorOptions = document.querySelectorAll('.color-option');
+
+    // Abrir o modal (você pode adicionar um botão para abrir o modal)
+    // document.getElementById('openModalBtn').addEventListener('click', function() {
+    //     modal.style.display = 'flex';
+    // });
+
+    // Fechar o modal
+    closeModal.addEventListener('click', function() {
+        modal.style.display = 'none';
+    });
+
+    // Selecionar uma cor
+    colorOptions.forEach(option => {
+        option.addEventListener('click', function() {
+            document.documentElement.style.setProperty('--primary-color', this.getAttribute('data-color'));
+            modal.style.display = 'none';
+        });
+    });
+
+    // Fechar o modal quando clicar fora dele
+    window.addEventListener('click', function(event) {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    });
+});
