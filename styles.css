@@ -1,16 +1,16 @@
 /* Variables */
 :root {
-    --primary: #1e90ff; /* Azul */
-    --secondary: #0077cc; /* Azul mais escuro */
-    --accent: #ff6b6b; /* Vermelho para contraste */
-    --background: #0a192f; /* Fundo escuro azulado */
-    --text: #ffffff; /* Texto branco */
-    --light-text: #b3b3b3; /* Texto claro */
-    --white: #ffffff; /* Branco */
-    --gradient: linear-gradient(135deg, #1e90ff 0%, #0077cc 100%); /* Gradiente azul */
-    --shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Sombra mais escura */
+    --primary: #1e90ff;
+    --secondary: #0077cc;
+    --accent: #ff6b6b;
+    --background: #0a192f;
+    --text: #ffffff;
+    --light-text: #b3b3b3;
+    --white: #ffffff;
+    --gradient: linear-gradient(135deg, #1e90ff 0%, #0077cc 100%);
+    --shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     --transition: all 0.3s ease;
-    --card-bg: #112240; /* Fundo dos cards */
+    --card-bg: #112240;
 }
 
 /* Reset & Base Styles */
@@ -35,7 +35,7 @@ body {
 
 /* Navigation */
 .navbar {
-    position: fixed; /* Barra fixa no topo */
+    position: fixed;
     top: 0;
     width: 100%;
     background: var(--background);
@@ -59,11 +59,11 @@ body {
 }
 
 .logo .highlight {
-    color: var(--primary); /* Azul */
+    color: var(--primary);
 }
 
 .logo .white {
-    color: var(--white); /* Branco */
+    color: var(--white);
 }
 
 .nav-items {
@@ -98,7 +98,7 @@ body {
 }
 
 .menu-btn.open i::before {
-    content: "\f00d"; /* Ícone de "X" do FontAwesome */
+    content: "\f00d";
 }
 
 /* Hero Section */
@@ -107,7 +107,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 120px 10% 0; /* Ajuste para evitar sobreposição */
+    padding: 120px 10% 0;
     background: var(--background);
 }
 
@@ -119,7 +119,7 @@ body {
 
 .hero-text {
     flex: 1;
-    z-index: 1; /* Garante que o texto fique acima da imagem */
+    z-index: 1;
 }
 
 .hero-text h1 {
@@ -169,6 +169,12 @@ body {
     height: auto;
     border-radius: 15px;
     box-shadow: var(--shadow);
+}
+
+/* Tamanho menor para a imagem */
+.small-image {
+    width: 300px; /* Ajuste o tamanho conforme necessário */
+    height: auto;
 }
 
 /* Features Section */
@@ -312,7 +318,7 @@ footer {
 /* Responsive Styles */
 @media (max-width: 768px) {
     .hero {
-        padding-top: 120px; /* Aumenta o padding-top no mobile */
+        padding-top: 120px;
     }
 
     .hero-content {
