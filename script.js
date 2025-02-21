@@ -65,30 +65,39 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-// Color Picker Functionality
+// Modal Example
 document.addEventListener('DOMContentLoaded', function () {
-    const colorPicker = document.getElementById('color-picker');
-    const applyColorButton = document.getElementById('apply-color');
-    const body = document.body;
+    const modal = document.getElementById('confirmation-modal');
+    const openModalButtons = document.querySelectorAll('.btn.primary');
+    const closeModalButton = document.querySelector('.close-modal');
 
-    applyColorButton.addEventListener('click', function () {
-        const color = colorPicker.value.trim().toLowerCase();
-        if (color === 'dark') {
-            body.classList.add('dark-mode');
-        } else if (color === 'white') {
-            body.classList.remove('dark-mode');
-            body.style.backgroundColor = '#ffffff';
-            body.style.color = '#000000';
-        } else {
-            body.style.backgroundColor = color;
-            body.style.color = '#ffffff'; // Default text color for other backgrounds
+    openModalButtons.forEach(button => {
+        button.addEventListener('click', function (e) {
+            e.preventDefault();
+            modal.style.display = 'block';
+        });
+    });
+
+    closeModalButton.addEventListener('click', function () {
+        modal.style.display = 'none';
+    });
+
+    window.addEventListener('click', function (e) {
+        if (e.target === modal) {
+            modal.style.display = 'none';
         }
     });
 });
 
-// Dark Mode Toggle (Integrated into Color Picker)
+// Dark Mode Toggle
 document.addEventListener('DOMContentLoaded', function () {
+    const darkModeToggle = document.getElementById('dark-mode-toggle');
     const body = document.body;
+
+    darkModeToggle.addEventListener('click', function () {
+        body.classList.toggle('dark-mode');
+        localStorage.setItem('dark-mode', body.classList.contains('dark-mode'));
+    });
 
     // Check saved state
     if (localStorage.getItem('dark-mode') === 'true') {
