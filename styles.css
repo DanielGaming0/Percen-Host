@@ -64,6 +64,7 @@ body {
 .logo-image {
     width: 30px; /* Tamanho pequeno para a imagem */
     height: auto;
+    margin-right: 0.5rem; /* Espaço entre a logo e o texto */
 }
 
 .logo .highlight {
