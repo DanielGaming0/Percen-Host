@@ -22,16 +22,31 @@
                 <li><a href="#features">Features</a></li>
                 <li><a href="#pricing">Pricing</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li><a href="#get-started" class="btn primary">Get Started</a></li>
                 <li><button id="dark-mode-toggle" class="btn secondary">Dark Mode</button></li>
-                <li>
-                    <input type="text" id="color-input" placeholder="Enter a color (e.g., red)" onkeyup="changeColor()">
-                </li>
+                <li><button id="color-picker-toggle" class="btn secondary">Choose Color</button></li>
             </div>
             <div class="menu-btn">
                 <i class="fas fa-bars"></i>
             </div>
         </div>
     </nav>
+
+    <!-- Color Picker Modal -->
+    <div id="color-picker-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Choose a Color for Your Site</h2>
+            <div class="color-options">
+                <button class="color-option" data-color="red"></button>
+                <button class="color-option" data-color="blue"></button>
+                <button class="color-option" data-color="green"></button>
+                <button class="color-option" data-color="purple"></button>
+                <button class="color-option" data-color="orange"></button>
+                <button class="color-option" data-color="pink"></button>
+            </div>
+        </div>
+    </div>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
@@ -159,7 +174,7 @@
         </div>
     </footer>
 
-    <!-- Modal de Confirmação -->
+    <!-- Confirmation Modal -->
     <div id="confirmation-modal" class="modal">
         <div class="modal-content">
             <span class="close-modal">&times;</span>
@@ -278,11 +293,42 @@
             }
         });
 
-        // Change background color based on input
-        function changeColor() {
-            const colorInput = document.getElementById('color-input').value.toLowerCase();
-            document.body.style.backgroundColor = colorInput;
-        }
+        // Color Picker Modal
+        document.addEventListener('DOMContentLoaded', function () {
+            const colorPickerModal = document.getElementById('color-picker-modal');
+            const colorPickerToggle = document.getElementById('color-picker-toggle');
+            const closeColorPickerModal = document.querySelector('#color-picker-modal .close-modal');
+            const colorOptions = document.querySelectorAll('.color-option');
+
+            colorPickerToggle.addEventListener('click', function () {
+                colorPickerModal.style.display = 'block';
+            });
+
+            closeColorPickerModal.addEventListener('click', function () {
+                colorPickerModal.style.display = 'none';
+            });
+
+            window.addEventListener('click', function (e) {
+                if (e.target === colorPickerModal) {
+                    colorPickerModal.style.display = 'none';
+                }
+            });
+
+            colorOptions.forEach(option => {
+                option.addEventListener('click', function () {
+                    const selectedColor = this.getAttribute('data-color');
+                    document.documentElement.style.setProperty('--primary-color', selectedColor);
+                    localStorage.setItem('site-color', selectedColor);
+                    colorPickerModal.style.display = 'none';
+                });
+            });
+
+            // Verifica a cor salva
+            const savedColor = localStorage.getItem('site-color');
+            if (savedColor) {
+                document.documentElement.style.setProperty('--primary-color', savedColor);
+            }
+        });
     </script>
 </body>
 </html>
