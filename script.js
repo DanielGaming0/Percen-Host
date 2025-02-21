@@ -41,66 +41,51 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-// Animated Counter
-document.addEventListener('DOMContentLoaded', function () {
-    const counters = document.querySelectorAll('.counter');
-    const speed = 200; // Animation speed
-
-    counters.forEach(counter => {
-        const updateCount = () => {
-            const target = +counter.getAttribute('data-target');
-            const count = +counter.innerText;
-
-            const increment = target / speed;
-
-            if (count < target) {
-                counter.innerText = Math.ceil(count + increment);
-                setTimeout(updateCount, 1);
-            } else {
-                counter.innerText = target;
-            }
-        };
-
-        updateCount();
-    });
-});
-
-// Modal Example
-document.addEventListener('DOMContentLoaded', function () {
-    const modal = document.getElementById('confirmation-modal');
-    const openModalButtons = document.querySelectorAll('.btn.primary');
-    const closeModalButton = document.querySelector('.close-modal');
-
-    openModalButtons.forEach(button => {
-        button.addEventListener('click', function (e) {
-            e.preventDefault();
-            modal.style.display = 'block';
-        });
-    });
-
-    closeModalButton.addEventListener('click', function () {
-        modal.style.display = 'none';
-    });
-
-    window.addEventListener('click', function (e) {
-        if (e.target === modal) {
-            modal.style.display = 'none';
-        }
-    });
-});
-
 // Dark Mode Toggle
-document.addEventListener('DOMContentLoaded', function () {
-    const darkModeToggle = document.getElementById('dark-mode-toggle');
-    const body = document.body;
+const darkModeToggle = document.getElementById('dark-mode-toggle');
+const lightModeToggle = document.getElementById('light-mode-toggle');
+const body = document.body;
 
-    darkModeToggle.addEventListener('click', function () {
-        body.classList.toggle('dark-mode');
-        localStorage.setItem('dark-mode', body.classList.contains('dark-mode'));
-    });
-
-    // Check saved state
-    if (localStorage.getItem('dark-mode') === 'true') {
-        body.classList.add('dark-mode');
-    }
+darkModeToggle.addEventListener('click', function () {
+    body.classList.remove('light-mode');
+    body.classList.add('dark-mode');
+    localStorage.setItem('theme', 'dark');
 });
+
+lightModeToggle.addEventListener('click', function () {
+    body.classList.remove('dark-mode');
+    body.classList.add('light-mode');
+    localStorage.setItem('theme', 'light');
+});
+
+// Check saved theme
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'dark') {
+    body.classList.add('dark-mode');
+} else if (savedTheme === 'light') {
+    body.classList.add('light-mode');
+}
+
+// Language Toggle
+const languageEn = document.getElementById('language-en');
+const languagePt = document.getElementById('language-pt');
+const elementsToTranslate = document.querySelectorAll('[data-en], [data-pt]');
+
+languageEn.addEventListener('click', function () {
+    elementsToTranslate.forEach(element => {
+        element.textContent = element.getAttribute('data-en');
+    });
+    languageEn.classList.add('active');
+    languagePt.classList.remove('active');
+});
+
+languagePt.addEventListener('click', function () {
+    elementsToTranslate.forEach(element => {
+        element.textContent = element.getAttribute('data-pt');
+    });
+    languagePt.classList.add('active');
+    languageEn.classList.remove('active');
+});
+
+// Set default language to English
+languageEn.click();
