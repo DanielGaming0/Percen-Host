@@ -10,18 +10,7 @@
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
 </head>
 <body>
-    <!-- Language Navigation -->
-    <nav class="language-navbar">
-        <div class="nav-content">
-            <div class="language-selector">
-                <span>Choose Language:</span>
-                <button id="language-en" class="btn language-btn active">English</button>
-                <button id="language-pt" class="btn language-btn">Português</button>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Main Navigation -->
+    <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-content">
             <div class="logo">
@@ -29,13 +18,12 @@
                 <span class="highlight">Percen<span class="white">Host</span></span>
             </div>
             <div class="nav-items">
-                <li><a href="#home" data-en="Home" data-pt="Início">Home</a></li>
-                <li><a href="#features" data-en="Features" data-pt="Recursos">Features</a></li>
-                <li><a href="#pricing" data-en="Pricing" data-pt="Preços">Pricing</a></li>
-                <li><a href="#contact" data-en="Contact" data-pt="Contato">Contact</a></li>
-                <li><a href="#get-started" class="btn primary" data-en="Get Started" data-pt="Começar">Get Started</a></li>
-                <li><button id="dark-mode-toggle" class="btn secondary" data-en="Dark Mode" data-pt="Modo Escuro">Dark Mode</button></li>
-                <li><button id="light-mode-toggle" class="btn secondary" data-en="Light Mode" data-pt="Modo Claro">Light Mode</button></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#get-started" class="btn primary">Get Started</a></li>
+                <li><button id="dark-mode-toggle" class="btn secondary">Dark Mode</button></li>
             </div>
             <div class="menu-btn">
                 <i class="fas fa-bars"></i>
@@ -47,13 +35,13 @@
     <section id="home" class="hero">
         <div class="hero-content">
             <div class="hero-text">
-                <h1 data-aos="fade-up" data-en="Great Performance for Your" data-pt="Alta Performance para o Seu">Great Performance for Your <span class="typing-effect"></span></h1>
-                <p data-aos="fade-up" data-aos-delay="200" data-en="Experience the best hosting with high performance, advanced security, and 24/7 support." data-pt="Experimente a melhor hospedagem com alta performance, segurança avançada e suporte 24/7.">
+                <h1 data-aos="fade-up">Great Performance for Your <span class="typing-effect"></span></h1>
+                <p data-aos="fade-up" data-aos-delay="200">
                     Experience the best hosting with high performance, advanced security, and 24/7 support.
                 </p>
                 <div class="cta-buttons" data-aos="fade-up" data-aos-delay="400">
-                    <a href="#get-started" class="btn primary" data-en="Get Started" data-pt="Começar">Get Started</a>
-                    <a href="#features" class="btn secondary" data-en="Learn More" data-pt="Saiba Mais">Learn More</a>
+                    <a href="#get-started" class="btn primary">Get Started</a>
+                    <a href="#features" class="btn secondary">Learn More</a>
                 </div>
             </div>
         </div>
@@ -62,24 +50,24 @@
     <!-- Features Section -->
     <section id="features" class="features">
         <div class="section-title">
-            <h2 data-en="Why Choose PercenHost?" data-pt="Por que Escolher PercenHost?">Why Choose PercenHost?</h2>
+            <h2>Why Choose PercenHost?</h2>
             <div class="title-bar"></div>
         </div>
         <div class="features-container">
             <div class="feature-card" data-aos="fade-up">
                 <i class="fas fa-rocket"></i>
-                <h3 data-en="High Performance" data-pt="Alta Performance">High Performance</h3>
-                <p data-en="Our servers are optimized for the best Minecraft experience." data-pt="Nossos servidores são otimizados para a melhor experiência no Minecraft.">Our servers are optimized for the best Minecraft experience.</p>
+                <h3>High Performance</h3>
+                <p>Our servers are optimized for the best Minecraft experience.</p>
             </div>
             <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
                 <i class="fas fa-shield-alt"></i>
-                <h3 data-en="Advanced Security" data-pt="Segurança Avançada">Advanced Security</h3>
-                <p data-en="Protection against DDoS attacks and advanced security measures." data-pt="Proteção contra ataques DDoS e medidas de segurança avançadas.">Protection against DDoS attacks and advanced security measures.</p>
+                <h3>Advanced Security</h3>
+                <p>Protection against DDoS attacks and advanced security measures.</p>
             </div>
             <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
                 <i class="fas fa-headset"></i>
-                <h3 data-en="24/7 Support" data-pt="Suporte 24/7">24/7 Support</h3>
-                <p data-en="Our team is always available to help you with any issues." data-pt="Nossa equipe está sempre disponível para ajudar com qualquer problema.">Our team is always available to help you with any issues.</p>
+                <h3>24/7 Support</h3>
+                <p>Our team is always available to help you with any issues.</p>
             </div>
         </div>
     </section>
@@ -87,64 +75,42 @@
     <!-- Pricing Section -->
     <section id="pricing" class="pricing">
         <div class="section-title">
-            <h2 data-en="Pricing Plans" data-pt="Planos de Preços">Pricing Plans</h2>
+            <h2>Pricing Plans</h2>
             <div class="title-bar"></div>
         </div>
         <div class="pricing-container">
             <div class="pricing-card" data-aos="fade-up">
-                <h3 data-en="Basic Plan" data-pt="Plano Básico">Basic Plan</h3>
-                <p class="price" data-en="Prices Coming Soon" data-pt="Preços em Breve">Prices Coming Soon</p>
+                <h3>Basic Plan</h3>
+                <p class="price">Prices Coming Soon</p>
                 <ul>
-                    <li data-en="2 Slots" data-pt="2 Slots">2 Slots</li>
-                    <li data-en="4GB RAM" data-pt="4GB RAM">4GB RAM</li>
-                    <li data-en="DDoS Protection" data-pt="Proteção DDoS">DDoS Protection</li>
+                    <li>2 Slots</li>
+                    <li>4GB RAM</li>
+                    <li>DDoS Protection</li>
                 </ul>
-                <a href="#pricing" class="btn primary" data-en="Get Started" data-pt="Começar">Get Started</a>
+                <a href="#get-started" class="btn primary">Get Started</a>
             </div>
             <div class="pricing-card" data-aos="fade-up" data-aos-delay="200">
-                <h3 data-en="Advanced Plan" data-pt="Plano Avançado">Advanced Plan</h3>
-                <p class="price" data-en="Prices Coming Soon" data-pt="Preços em Breve">Prices Coming Soon</p>
+                <h3>Advanced Plan</h3>
+                <p class="price">Prices Coming Soon</p>
                 <ul>
-                    <li data-en="4 Slots" data-pt="4 Slots">4 Slots</li>
-                    <li data-en="8GB RAM" data-pt="8GB RAM">8GB RAM</li>
-                    <li data-en="DDoS Protection" data-pt="Proteção DDoS">DDoS Protection</li>
-                    <li data-en="Daily Backups" data-pt="Backups Diários">Daily Backups</li>
+                    <li>4 Slots</li>
+                    <li>8GB RAM</li>
+                    <li>DDoS Protection</li>
+                    <li>Daily Backups</li>
                 </ul>
-                <a href="#pricing" class="btn primary" data-en="Get Started" data-pt="Começar">Get Started</a>
+                <a href="#get-started" class="btn primary">Get Started</a>
             </div>
             <div class="pricing-card" data-aos="fade-up" data-aos-delay="400">
-                <h3 data-en="Premium Plan" data-pt="Plano Premium">Premium Plan</h3>
-                <p class="price" data-en="Prices Coming Soon" data-pt="Preços em Breve">Prices Coming Soon</p>
+                <h3>Premium Plan</h3>
+                <p class="price">Prices Coming Soon</p>
                 <ul>
-                    <li data-en="8 Slots" data-pt="8 Slots">8 Slots</li>
-                    <li data-en="16GB RAM" data-pt="16GB RAM">16GB RAM</li>
-                    <li data-en="DDoS Protection" data-pt="Proteção DDoS">DDoS Protection</li>
-                    <li data-en="Daily Backups" data-pt="Backups Diários">Daily Backups</li>
-                    <li data-en="Priority Support" data-pt="Suporte Prioritário">Priority Support</li>
+                    <li>8 Slots</li>
+                    <li>16GB RAM</li>
+                    <li>DDoS Protection</li>
+                    <li>Daily Backups</li>
+                    <li>Priority Support</li>
                 </ul>
-                <a href="#pricing" class="btn primary" data-en="Get Started" data-pt="Começar">Get Started</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Statistics Section -->
-    <section id="statistics" class="statistics">
-        <div class="section-title">
-            <h2 data-en="Our Statistics" data-pt="Nossas Estatísticas">Our Statistics</h2>
-            <div class="title-bar"></div>
-        </div>
-        <div class="statistics-container">
-            <div class="statistic-card">
-                <span class="counter" data-target="1000" data-en="Coming Soon" data-pt="Em Breve">Coming Soon</span>
-                <p data-en="Servers Hosted" data-pt="Servidores Hospedados">Servers Hosted</p>
-            </div>
-            <div class="statistic-card">
-                <span class="counter" data-target="500" data-en="Coming Soon" data-pt="Em Breve">Coming Soon</span>
-                <p data-en="Happy Clients" data-pt="Clientes Satisfeitos">Happy Clients</p>
-            </div>
-            <div class="statistic-card">
-                <span class="counter" data-target="99" data-en="Coming Soon" data-pt="Em Breve">Coming Soon</span>
-                <p data-en="Uptime (%)" data-pt="Tempo de Atividade (%)">Uptime (%)</p>
+                <a href="#get-started" class="btn primary">Get Started</a>
             </div>
         </div>
     </section>
@@ -152,12 +118,34 @@
     <!-- Get Started Section -->
     <section id="get-started" class="get-started">
         <div class="section-title">
-            <h2 data-en="Get Started Today" data-pt="Comece Hoje">Get Started Today</h2>
+            <h2>Get Started Today</h2>
             <div class="title-bar"></div>
         </div>
         <div class="get-started-container">
-            <p data-en="Start hosting your Minecraft server with PercenHost now!" data-pt="Comece a hospedar seu servidor de Minecraft com PercenHost agora!">Start hosting your Minecraft server with PercenHost now!</p>
-            <a href="#pricing" class="btn primary" data-en="Choose a Plan" data-pt="Escolha um Plano">Choose a Plan</a>
+            <p>Start hosting your Minecraft server with PercenHost now!</p>
+            <a href="#pricing" class="btn primary">Choose a Plan</a>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section id="statistics" class="statistics">
+        <div class="section-title">
+            <h2>Our Statistics</h2>
+            <div class="title-bar"></div>
+        </div>
+        <div class="statistics-container">
+            <div class="statistic-card">
+                <span class="counter" data-target="1000">0</span>
+                <p>Servers Hosted</p>
+            </div>
+            <div class="statistic-card">
+                <span class="counter" data-target="500">0</span>
+                <p>Happy Clients</p>
+            </div>
+            <div class="statistic-card">
+                <span class="counter" data-target="99">0</span>
+                <p>Uptime (%)</p>
+            </div>
         </div>
     </section>
 
@@ -169,7 +157,124 @@
         </div>
     </footer>
 
+    <!-- Modal de Confirmação -->
+    <div id="confirmation-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <p>Você está prestes a escolher um plano. Tem certeza?</p>
+            <button class="btn primary">Confirmar</button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="scripts.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        // Mobile Menu Toggle
+        const menuBtn = document.querySelector('.menu-btn');
+        const navItems = document.querySelector('.nav-items');
+        
+        menuBtn.addEventListener('click', () => {
+            menuBtn.classList.toggle('open');
+            navItems.classList.toggle('active');
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!menuBtn.contains(e.target) && !navItems.contains(e.target)) {
+                menuBtn.classList.remove('open');
+                navItems.classList.remove('active');
+            }
+        });
+
+        // Smooth Scroll for Navigation Links
+        document.querySelectorAll('.nav-items a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+
+        // Typing Effect
+        document.addEventListener('DOMContentLoaded', function () {
+            const typed = new Typed('.typing-effect', {
+                strings: ["Minecraft Server", "Gaming Experience", "Community"],
+                typeSpeed: 100,
+                backSpeed: 50,
+                loop: true
+            });
+        });
+
+        // Animated Counter
+        document.addEventListener('DOMContentLoaded', function () {
+            const counters = document.querySelectorAll('.counter');
+            const speed = 200; // Velocidade da animação
+
+            counters.forEach(counter => {
+                const updateCount = () => {
+                    const target = +counter.getAttribute('data-target');
+                    const count = +counter.innerText;
+
+                    const increment = target / speed;
+
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count + increment);
+                        setTimeout(updateCount, 1);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+
+                updateCount();
+            });
+        });
+
+        // Modal Example
+        document.addEventListener('DOMContentLoaded', function () {
+            const modal = document.getElementById('confirmation-modal');
+            const openModalButtons = document.querySelectorAll('.btn.primary');
+            const closeModalButton = document.querySelector('.close-modal');
+
+            openModalButtons.forEach(button => {
+                button.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    modal.style.display = 'block';
+                });
+            });
+
+            closeModalButton.addEventListener('click', function () {
+                modal.style.display = 'none';
+            });
+
+            window.addEventListener('click', function (e) {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        });
+
+        // Dark Mode Toggle
+        document.addEventListener('DOMContentLoaded', function () {
+            const darkModeToggle = document.getElementById('dark-mode-toggle');
+            const body = document.body;
+
+            darkModeToggle.addEventListener('click', function () {
+                body.classList.toggle('dark-mode');
+                localStorage.setItem('dark-mode', body.classList.contains('dark-mode'));
+            });
+
+            // Verifica o estado salvo
+            if (localStorage.getItem('dark-mode') === 'true') {
+                body.classList.add('dark-mode');
+            }
+        });
+    </script>
 </body>
 </html>
