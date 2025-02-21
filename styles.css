@@ -118,6 +118,21 @@ body {
     content: "\f00d";
 }
 
+/* Dark Mode Circle */
+.dark-mode-circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: black;
+    cursor: pointer;
+    margin-left: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.dark-mode-circle.active {
+    background-color: var(--primary);
+}
+
 /* Hero Section */
 .hero {
     min-height: 100vh;

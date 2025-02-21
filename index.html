@@ -22,9 +22,8 @@
                 <li><a href="#features">Features</a></li>
                 <li><a href="#pricing">Pricing</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="#get-started" class="btn primary">Get Started</a></li>
-                <li><button id="dark-mode-toggle" class="btn secondary">Dark Mode</button></li>
             </div>
+            <div class="dark-mode-circle" id="dark-mode-circle"></div>
             <div class="menu-btn">
                 <i class="fas fa-bars"></i>
             </div>
@@ -262,17 +261,19 @@
 
         // Dark Mode Toggle
         document.addEventListener('DOMContentLoaded', function () {
-            const darkModeToggle = document.getElementById('dark-mode-toggle');
+            const darkModeCircle = document.getElementById('dark-mode-circle');
             const body = document.body;
 
-            darkModeToggle.addEventListener('click', function () {
+            darkModeCircle.addEventListener('click', function () {
                 body.classList.toggle('dark-mode');
+                darkModeCircle.classList.toggle('active');
                 localStorage.setItem('dark-mode', body.classList.contains('dark-mode'));
             });
 
             // Verifica o estado salvo
             if (localStorage.getItem('dark-mode') === 'true') {
                 body.classList.add('dark-mode');
+                darkModeCircle.classList.add('active');
             }
         });
     </script>

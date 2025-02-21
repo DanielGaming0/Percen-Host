@@ -91,16 +91,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Dark Mode Toggle
 document.addEventListener('DOMContentLoaded', function () {
-    const darkModeToggle = document.getElementById('dark-mode-toggle');
+    const darkModeCircle = document.getElementById('dark-mode-circle');
     const body = document.body;
 
-    darkModeToggle.addEventListener('click', function () {
+    darkModeCircle.addEventListener('click', function () {
         body.classList.toggle('dark-mode');
+        darkModeCircle.classList.toggle('active');
         localStorage.setItem('dark-mode', body.classList.contains('dark-mode'));
     });
 
     // Check saved state
     if (localStorage.getItem('dark-mode') === 'true') {
         body.classList.add('dark-mode');
+        darkModeCircle.classList.add('active');
     }
 });
