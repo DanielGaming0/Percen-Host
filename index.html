@@ -22,8 +22,10 @@
                 <li><a href="#features">Features</a></li>
                 <li><a href="#pricing">Pricing</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="#get-started" class="btn primary">Get Started</a></li>
                 <li><button id="dark-mode-toggle" class="btn secondary">Dark Mode</button></li>
+                <li>
+                    <input type="text" id="color-input" placeholder="Enter a color (e.g., red)" onkeyup="changeColor()">
+                </li>
             </div>
             <div class="menu-btn">
                 <i class="fas fa-bars"></i>
@@ -275,6 +277,12 @@
                 body.classList.add('dark-mode');
             }
         });
+
+        // Change background color based on input
+        function changeColor() {
+            const colorInput = document.getElementById('color-input').value.toLowerCase();
+            document.body.style.backgroundColor = colorInput;
+        }
     </script>
 </body>
 </html>
