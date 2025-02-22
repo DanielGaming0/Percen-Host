@@ -8,8 +8,93 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <style>
+        /* Estilos CSS para o botão de tema */
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: black;
+            cursor: pointer;
+            border: none;
+            outline: none;
+            z-index: 1000;
+        }
+
+        .theme-toggle.active {
+            background-color: blue;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .nav-items {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-items li {
+            margin-left: 20px;
+        }
+
+        .nav-items a {
+            text-decoration: none;
+            color: white;
+        }
+
+        /* Estilos para o menu responsivo */
+        .menu-btn {
+            display: none;
+            cursor: pointer;
+            font-size: 20px;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .nav-items {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background-color: #333;
+                text-align: center;
+                box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+            }
+
+            .nav-items.active {
+                display: flex;
+            }
+
+            .nav-items li {
+                margin: 10px 0;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Botão de Dark Mode -->
+    <button class="theme-toggle"></button>
+
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-content">
@@ -22,8 +107,6 @@
                 <li><a href="#features">Features</a></li>
                 <li><a href="#pricing">Pricing</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="#get-started" class="btn primary">Get Started</a></li>
-                <li><button id="dark-mode-toggle" class="btn secondary">Dark Mode</button></li>
             </div>
             <div class="menu-btn">
                 <i class="fas fa-bars"></i>
@@ -262,17 +345,18 @@
 
         // Dark Mode Toggle
         document.addEventListener('DOMContentLoaded', function () {
-            const darkModeToggle = document.getElementById('dark-mode-toggle');
+            const themeToggle = document.querySelector('.theme-toggle');
             const body = document.body;
 
-            darkModeToggle.addEventListener('click', function () {
+            themeToggle.addEventListener('click', () => {
+                themeToggle.classList.toggle('active');
                 body.classList.toggle('dark-mode');
                 localStorage.setItem('dark-mode', body.classList.contains('dark-mode'));
             });
 
-            // Verifica o estado salvo
             if (localStorage.getItem('dark-mode') === 'true') {
                 body.classList.add('dark-mode');
+                themeToggle.classList.add('active');
             }
         });
     </script>
