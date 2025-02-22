@@ -27,7 +27,9 @@ document.querySelectorAll('.nav-items a').forEach(anchor => {
         e.preventDefault();
         const targetId = this.getAttribute('href');
         const targetSection = document.querySelector(targetId);
-        targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (targetSection) {
+            targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
     });
 });
 
@@ -47,10 +49,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const speed = 200; // Animation speed
 
     counters.forEach(counter => {
+        const target = +counter.getAttribute('data-target');
         const updateCount = () => {
-            const target = +counter.getAttribute('data-target');
             const count = +counter.innerText;
-
             const increment = target / speed;
 
             if (count < target) {
@@ -94,13 +95,14 @@ document.addEventListener('DOMContentLoaded', function () {
     const darkModeToggle = document.getElementById('dark-mode-toggle');
     const body = document.body;
 
+    // Verifica o estado salvo
+    const isDarkMode = localStorage.getItem('dark-mode') === 'true';
+    if (isDarkMode) {
+        body.classList.add('dark-mode');
+    }
+
     darkModeToggle.addEventListener('click', function () {
         body.classList.toggle('dark-mode');
         localStorage.setItem('dark-mode', body.classList.contains('dark-mode'));
     });
-
-    // Verifica o estado salvo
-    if (localStorage.getItem('dark-mode') === 'true') {
-        body.classList.add('dark-mode');
-    }
 });
