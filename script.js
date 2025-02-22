@@ -65,10 +65,10 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-// Modal Example
+// Modal Example (Ajustado para não abrir no botão "Dark Mode")
 document.addEventListener('DOMContentLoaded', function () {
     const modal = document.getElementById('confirmation-modal');
-    const openModalButtons = document.querySelectorAll('.btn.primary');
+    const openModalButtons = document.querySelectorAll('.btn.primary:not(#dark-mode-toggle)'); // Ignora o botão "Dark Mode"
     const closeModalButton = document.querySelector('.close-modal');
 
     openModalButtons.forEach(button => {
@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-// Dark Mode Toggle
+// Dark Mode Toggle (Funcionalidade independente)
 document.addEventListener('DOMContentLoaded', function () {
     const darkModeToggle = document.getElementById('dark-mode-toggle');
     const body = document.body;
@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function () {
         localStorage.setItem('dark-mode', body.classList.contains('dark-mode'));
     });
 
-    // Check saved state
+    // Verifica o estado salvo
     if (localStorage.getItem('dark-mode') === 'true') {
         body.classList.add('dark-mode');
     }
