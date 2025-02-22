@@ -66,10 +66,10 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-// Modal Example (Ajustado para não abrir no botão "Dark Mode")
+// Modal Example (Ajustado para abrir apenas em botões com a classe .open-modal)
 document.addEventListener('DOMContentLoaded', function () {
     const modal = document.getElementById('confirmation-modal');
-    const openModalButtons = document.querySelectorAll('.btn.primary:not(#dark-mode-toggle)'); // Ignora o botão "Dark Mode"
+    const openModalButtons = document.querySelectorAll('.btn.primary.open-modal'); // Seleciona apenas botões com .open-modal
     const closeModalButton = document.querySelector('.close-modal');
 
     openModalButtons.forEach(button => {
