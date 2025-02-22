@@ -22,7 +22,8 @@
                 <li><a href="#features">Features</a></li>
                 <li><a href="#pricing">Pricing</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><button id="dark-mode-toggle" class="btn">Dark Mode</button></li>
+                <li><a href="#get-started" class="btn primary">Get Started</a></li>
+                <li><button id="dark-mode-toggle" class="btn secondary">Dark Mode</button></li>
             </div>
             <div class="menu-btn">
                 <i class="fas fa-bars"></i>
@@ -39,7 +40,7 @@
                     Experience the best hosting with high performance, advanced security, and 24/7 support.
                 </p>
                 <div class="cta-buttons" data-aos="fade-up" data-aos-delay="400">
-                    <a href="#get-started" class="btn primary open-modal">Get Started</a>
+                    <a href="#get-started" class="btn primary">Get Started</a>
                     <a href="#features" class="btn secondary">Learn More</a>
                 </div>
             </div>
@@ -86,7 +87,7 @@
                     <li>4GB RAM</li>
                     <li>DDoS Protection</li>
                 </ul>
-                <a href="#get-started" class="btn primary open-modal">Get Started</a>
+                <a href="#get-started" class="btn primary">Get Started</a>
             </div>
             <div class="pricing-card" data-aos="fade-up" data-aos-delay="200">
                 <h3>Advanced Plan</h3>
@@ -97,7 +98,7 @@
                     <li>DDoS Protection</li>
                     <li>Daily Backups</li>
                 </ul>
-                <a href="#get-started" class="btn primary open-modal">Get Started</a>
+                <a href="#get-started" class="btn primary">Get Started</a>
             </div>
             <div class="pricing-card" data-aos="fade-up" data-aos-delay="400">
                 <h3>Premium Plan</h3>
@@ -109,7 +110,7 @@
                     <li>Daily Backups</li>
                     <li>Priority Support</li>
                 </ul>
-                <a href="#get-started" class="btn primary open-modal">Get Started</a>
+                <a href="#get-started" class="btn primary">Get Started</a>
             </div>
         </div>
     </section>
@@ -122,7 +123,7 @@
         </div>
         <div class="get-started-container">
             <p>Start hosting your Minecraft server with PercenHost now!</p>
-            <a href="#pricing" class="btn primary open-modal">Choose a Plan</a>
+            <a href="#pricing" class="btn primary">Choose a Plan</a>
         </div>
     </section>
 
@@ -167,6 +168,113 @@
 
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="scripts.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        // Mobile Menu Toggle
+        const menuBtn = document.querySelector('.menu-btn');
+        const navItems = document.querySelector('.nav-items');
+        
+        menuBtn.addEventListener('click', () => {
+            menuBtn.classList.toggle('open');
+            navItems.classList.toggle('active');
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!menuBtn.contains(e.target) && !navItems.contains(e.target)) {
+                menuBtn.classList.remove('open');
+                navItems.classList.remove('active');
+            }
+        });
+
+        // Smooth Scroll for Navigation Links
+        document.querySelectorAll('.nav-items a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+
+        // Typing Effect
+        document.addEventListener('DOMContentLoaded', function () {
+            const typed = new Typed('.typing-effect', {
+                strings: ["Minecraft Server", "Gaming Experience", "Community"],
+                typeSpeed: 100,
+                backSpeed: 50,
+                loop: true
+            });
+        });
+
+        // Animated Counter
+        document.addEventListener('DOMContentLoaded', function () {
+            const counters = document.querySelectorAll('.counter');
+            const speed = 200; // Velocidade da animação
+
+            counters.forEach(counter => {
+                const updateCount = () => {
+                    const target = +counter.getAttribute('data-target');
+                    const count = +counter.innerText;
+
+                    const increment = target / speed;
+
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count + increment);
+                        setTimeout(updateCount, 1);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+
+                updateCount();
+            });
+        });
+
+        // Modal Example
+        document.addEventListener('DOMContentLoaded', function () {
+            const modal = document.getElementById('confirmation-modal');
+            const openModalButtons = document.querySelectorAll('.btn.primary');
+            const closeModalButton = document.querySelector('.close-modal');
+
+            openModalButtons.forEach(button => {
+                button.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    modal.style.display = 'block';
+                });
+            });
+
+            closeModalButton.addEventListener('click', function () {
+                modal.style.display = 'none';
+            });
+
+            window.addEventListener('click', function (e) {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        });
+
+        // Dark Mode Toggle
+        document.addEventListener('DOMContentLoaded', function () {
+            const darkModeToggle = document.getElementById('dark-mode-toggle');
+            const body = document.body;
+
+            darkModeToggle.addEventListener('click', function () {
+                body.classList.toggle('dark-mode');
+                localStorage.setItem('dark-mode', body.classList.contains('dark-mode'));
+            });
+
+            // Verifica o estado salvo
+            if (localStorage.getItem('dark-mode') === 'true') {
+                body.classList.add('dark-mode');
+            }
+        });
+    </script>
 </body>
 </html>

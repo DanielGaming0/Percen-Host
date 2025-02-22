@@ -102,23 +102,6 @@ body {
     transform: translateY(-2px);
 }
 
-.nav-items button {
-    background: var(--gradient);
-    color: var(--white);
-    padding: 0.75rem 1.5rem;
-    border: none;
-    border-radius: 50px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-.nav-items button:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--shadow);
-}
-
 .menu-btn {
     display: none;
     cursor: pointer;
